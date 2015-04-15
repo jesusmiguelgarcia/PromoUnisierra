@@ -1,6 +1,11 @@
 Paginas a construir
+solo profe
 
-login.php
-noticias.php
-materias.php
-actividades.php
+15 de abril
+
+login.php  - yorlenis
+usuarios_agregar.php - juan / formulario 
+index.php - jorge / noticias
+materias.php - jimmy
+materias_editar.php - jacel
+actividades.php - martin

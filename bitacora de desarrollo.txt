@@ -3,6 +3,10 @@
 inicia desarrollo web de promo materias
 se asignan nombres de paginas
 
+Se crearon cuentas de github para trabajar de forma colaborativa
+
+
+
 16 abril
 
 jacel - tengo problemas con modulo materias favor de reviar . ....

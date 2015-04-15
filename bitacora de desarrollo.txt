@@ -5,6 +5,10 @@ se asignan nombres de paginas
 
 Se crearon cuentas de github para trabajar de forma colaborativa
 
+git							
+https://www.youtube.com/watch?v=nnL9kvQFHig							workflow con git
+
+https://www.youtube.com/watch?v=QnkiKrruJiE							uso de sourcetree
 
 
 16 abril

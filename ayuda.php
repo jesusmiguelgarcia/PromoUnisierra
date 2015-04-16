@@ -11,4 +11,13 @@ echo "Modulos del sistema";
 
  Graficos
 
+ Desarrolladores:
+ jorge
+ jacel
+ yorlenis
+ juan
+ jaime
+ martin
+ mike
+
  

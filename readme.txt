@@ -16,5 +16,6 @@ cambio elimina 3
 
 >>>>>>> parent of 6460ab1... elimina 2 probando reset
 
+elimina 5 probando ...
 
 

@@ -7,6 +7,8 @@ modificacion del 15 de abril
 - fecha 16/04/2015
 Se crea archivo de ayuda.php
 
+cambio elimina 1
+
 
 
 

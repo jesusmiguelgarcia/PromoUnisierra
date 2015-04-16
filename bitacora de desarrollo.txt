@@ -14,3 +14,5 @@ https://www.youtube.com/watch?v=QnkiKrruJiE							uso de sourcetree
 16 abril
 
 jacel - tengo problemas con modulo materias favor de reviar . ....
+
+Se esta probando gitflow para control de features y release

@@ -9,3 +9,4 @@ index.php - jorge / noticias
 materias.php - jimmy
 materias_editar.php - jacel
 actividades.php - martin
+ayuda.php - mike

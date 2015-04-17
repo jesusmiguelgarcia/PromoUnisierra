@@ -11,7 +11,7 @@ echo "Modulos del sistema";
 
  Graficos
 
- Desarrolladores:
+ Desarrolladores: fotos
  jorge
  jacel
  yorlenis

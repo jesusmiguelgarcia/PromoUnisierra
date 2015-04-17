@@ -22,4 +22,7 @@ echo "Modulos del sistema";
 
  finaliza funcionalidad
 
+ eliminalo yap con reversexxx
+ 
+
  

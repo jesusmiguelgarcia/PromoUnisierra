@@ -1,0 +1,51 @@
+#todo{
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	margin: 0 auto;
+	width: 80%;
+	min-width: 900px;
+	max-width: 1600px;
+	padding: 2em;
+}
+#todo #encabezado{
+	height: 120px;
+	border: solid 1px;
+	padding: 1em;
+	background-color:#E76A16;
+}
+#todo #encabezado #logo{
+	float: left;
+	width: 80px;
+	height: 100px;
+	margin-left: 10px;	
+}
+#todo #Menu{
+	height: 60px;
+	text-align: center;
+}
+#Menu #menuSitio li{
+	list-style: none;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 1em 1em 0 0;
+	background: #498E2D;
+	padding: 1em;
+}
+#todo #contenido{
+	width: 90%;
+	margin: 0 auto;
+	min-width: 900px;
+	max-width: 1600px;
+
+}
+#todo #contenido #noticias{	
+	text-align: justify;
+	font-size: 12;
+}
+#todo #copyright{
+	width: 80%;
+	height: 20%;
+	text-align: center;
+	font-size: 10;
+	min-width: 900px;
+	max-width: 1600px;
+}

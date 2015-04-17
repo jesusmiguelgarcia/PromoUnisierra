@@ -11,7 +11,7 @@ echo "Modulos del sistema";
 
  Graficos
 
- Desarrolladores:
+ Desarrolladores: fotos
  jorge
  jacel
  yorlenis
@@ -19,5 +19,7 @@ echo "Modulos del sistema";
  jaime
  martin
  mike
+
+ finaliza funcionalidad
 
  

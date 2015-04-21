@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,14 +18,15 @@
 					</center>
 				</h1>
 		</div>
-		<div id="Menu">
-			<ul id="menuSitio">
-				<li><b>Principal</b></li>
-				<li><b>Materias</b></li>
-				<li><b>Promociones</b></li>
-				<li><b>Graficas</b></li>	
-			</ul>
-		</div>
+<!-- 		<div id="Menu">
+	<ul id="menuSitio">
+		<li><b>Principal</b></li>
+		<li><b>Materias</b></li>
+		<li><b>Promociones</b></li>
+		<li><b>Graficas</b></li>	
+	</ul>
+</div> -->
+<?php include("cabeza.php"); ?>
 		<div id="contenido">
 			<div id="noticias">
 				<table border="0" width="100%">
@@ -132,5 +132,6 @@
 </body>
 </html>
 <?php 
-
+	include("cssyjs.php");
+	include("pie.php");
  ?>

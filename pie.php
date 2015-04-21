@@ -1,4 +1,4 @@
-<?php 
+
 
 <div class="footer">
     <div class="footer_resize">
@@ -12,4 +12,3 @@
       </ul>
       <div class="clr"></div>
     </div>
- ?>

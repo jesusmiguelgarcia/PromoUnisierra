@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -132,5 +131,5 @@
 </body>
 </html>
 <?php 
-
+	include("CSSyJS.php");
  ?>

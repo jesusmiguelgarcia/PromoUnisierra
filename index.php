@@ -26,7 +26,7 @@
 		<li><b>Graficas</b></li>	
 	</ul>
 </div> -->
-<?php include("menu.php"); ?>
+<?php include("cabeza.php"); ?>
 		<div id="contenido">
 			<div id="noticias">
 				<table border="0" width="100%">
@@ -132,5 +132,6 @@
 </body>
 </html>
 <?php 
-	include("CSSyJS.php");
+	include("cssyjs.php");
+	include("pie.php");
  ?>

@@ -18,14 +18,15 @@
 					</center>
 				</h1>
 		</div>
-		<div id="Menu">
-			<ul id="menuSitio">
-				<li><b>Principal</b></li>
-				<li><b>Materias</b></li>
-				<li><b>Promociones</b></li>
-				<li><b>Graficas</b></li>	
-			</ul>
-		</div>
+<!-- 		<div id="Menu">
+	<ul id="menuSitio">
+		<li><b>Principal</b></li>
+		<li><b>Materias</b></li>
+		<li><b>Promociones</b></li>
+		<li><b>Graficas</b></li>	
+	</ul>
+</div> -->
+<?php include("menu.php"); ?>
 		<div id="contenido">
 			<div id="noticias">
 				<table border="0" width="100%">

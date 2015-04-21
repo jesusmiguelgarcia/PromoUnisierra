@@ -16,3 +16,9 @@ documentacion muy buena
 jacel - tengo problemas con modulo materias favor de reviar . ....
 
 Se esta probando gitflow para control de features y release
+
+21 de abril
+
+buenas plantillas con css y js en :
+
+http://www.rocketwebsitetemplates.com/

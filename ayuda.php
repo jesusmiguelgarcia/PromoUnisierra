@@ -18,6 +18,8 @@ include("cabeza.php");
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
+
+
           <h2><span>Mike</span></h2><div class="clr"></div>
           <p><span class="date">March 16, 2018</span> &nbsp;|&nbsp Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments (11) &raquo;</a></p>
           <img src="imagenes/mike.jpg"  height="199" alt="image" />
@@ -48,11 +50,22 @@ which means that you are free to use it for any personal or commercial purpose p
 
  
   </div>
+
+
+   <div class="article">
+
+          
+          <h2><span>Yorlenis</span></h2><div class="clr"></div>
+          <p><span class="date">March 16, 2018</span> &nbsp;|&nbsp Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments (11) &raquo;</a></p>
+          <img src="imagenes/yorlenis.jpg"  height="199" alt="image" />
+
+</div>
+
         
   </div>
       
   </div>
-  
+    </div>
 
 
  <?php 

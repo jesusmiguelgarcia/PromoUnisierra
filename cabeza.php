@@ -1,9 +1,9 @@
   <div class="header">
     <div class="header_resize">
-      <div class="logo"> <img href="imagenes/logo.png"> </div>
+      <div class="logo"> <h1><a href="index.html">Promociones<span> Unisierra ISC</span> <small>Inscribete ya...!!!</small></a></h1>  </div>
       <div class="clr"></div>
       <div class="htext">
-        <h2>PromoUnisierra</h2>
+        <h2><img src="imagenes/logo.png" width=100></h2>
         
       </div>
       <div class="clr"></div>

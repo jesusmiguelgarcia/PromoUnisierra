@@ -23,7 +23,7 @@ a.com { float:right;}
 .header { background:url(imagenes/logo.png) no-repeat center 88px;}
 .header_resize { margin:0 auto; padding:0; width:970px; }
 .header .htext { margin:0; padding:24px 520px 24px 60px; height:194px; background:url(imagenes/hbg_img.jpg) no-repeat center center;}
-.header .htext h2 { color:#fff; font:normal 44px/1.5em Arial, Helvetica, sans-serif; text-transform:uppercase; padding:160px 0px 0px 450px; }
+.header .htext h2 { color:#fff; font:normal 44px/1.5em Arial, Helvetica, sans-serif; text-transform:uppercase; padding:120px 0px 0px 750px; }
 .header .htext p { color:#fff; font:bold 14px/1.4em Arial, Helvetica, sans-serif;  }
 .header .htext a { color:#fff; text-decoration:underline;}
 

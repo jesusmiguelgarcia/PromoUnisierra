@@ -7,15 +7,16 @@
 	<title>Noticias </title>
 </head>
 <body>
-	<div id="todo" class="content">
+<div class="todo">
+	<div  class="content">
 		<div id="encabezado" >
 			<div id="logo">
 				<!-- <img src="http://www.alumnosonline.com/universidades/unisierra/logo_unisierra.jpg"> -->
 			</div>
-
 		</div>
 
 	<?php include("cabeza.php"); ?>
+
 		<div id="contenido" class="content_resize">
 			<div id="noticias">
 				<table border="0" width="100%">
@@ -23,7 +24,7 @@
 						<td><h1>Noticia 1:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
+									<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -37,7 +38,7 @@
 						<td><h1>Noticia 4:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
+									<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -52,7 +53,7 @@
 						<td><h1>Noticia 2:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
+									<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -66,7 +67,7 @@
 						<td><h1>Noticia 5:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
+									<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -81,7 +82,7 @@
 						<td><h1>Noticia 3:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
+									<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -95,7 +96,7 @@
 						<td><h1>Noticia 6:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
+									<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -112,13 +113,9 @@
 		<center>
 			<div id="copyright">
 			<?php include("pie.php"); ?>
-				<!-- <p>Universidad de la Sierra. www.unisierra.edu.mx , <br>contacto@unisierra.edu.mx
-					Carretera Moctezuma – Cumpas Km. 2.5, C.P. 84560. Moctezuma, Sonora<br>
-					Teléfono: (634) 342 96 00.<br>
-					Copyright © 2014 . Reservados todos los derechos. </p> -->
-
 			</div>
 		</center>
+	</div>
 	</div>
 </body>
 </html>

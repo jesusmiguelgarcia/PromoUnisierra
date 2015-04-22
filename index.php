@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<link rel="stylesheet" href="css/noticias.css">
+	<!-- <link rel="stylesheet" href="css/noticias.css"> -->
+	<?php include("cssyjs.php");?>
 	<meta charset="utf-8"/>
 	<title>Noticias </title>
 </head>
 <body>
-	<div id="todo">
+	<div id="todo" class="content">
 		<div id="encabezado" >
-			<div id="logo"><img src="http://www.alumnosonline.com/universidades/unisierra/logo_unisierra.jpg">
+			<div id="logo">
+				<!-- <img src="http://www.alumnosonline.com/universidades/unisierra/logo_unisierra.jpg"> -->
 			</div>
-				<h1>
-					<center>
-						<font color = "white">
-							<b> &nbsp&nbsp"Una puerta abierta al cambio y al desarrollo."</b>
-						</font>
-					</center>
-				</h1>
+
 		</div>
-<!-- 		<div id="Menu">
-	<ul id="menuSitio">
-		<li><b>Principal</b></li>
-		<li><b>Materias</b></li>
-		<li><b>Promociones</b></li>
-		<li><b>Graficas</b></li>	
-	</ul>
-</div> -->
-<?php include("cabeza.php"); ?>
-		<div id="contenido">
+
+	<?php include("cabeza.php"); ?>
+		<div id="contenido" class="content_resize">
 			<div id="noticias">
 				<table border="0" width="100%">
 					<tr>
 						<td><h1>Noticia 1:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="img.png"></td>
+									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -48,7 +37,7 @@
 						<td><h1>Noticia 4:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="img.png"></td>
+									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -63,7 +52,7 @@
 						<td><h1>Noticia 2:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="img.png"></td>
+									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -77,7 +66,7 @@
 						<td><h1>Noticia 5:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="img.png"></td>
+									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -92,7 +81,7 @@
 						<td><h1>Noticia 3:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="img.png"></td>
+									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -106,7 +95,7 @@
 						<td><h1>Noticia 6:</h1>
 							<table>
 								<tr>
-									<td rowspan="2"> <img src="img.png"></td>
+									<td rowspan="2"> <img src="imagenes/sao.jpg"></td>
 									<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -122,16 +111,14 @@
 		</div>
 		<center>
 			<div id="copyright">
-				<p>Universidad de la Sierra. www.unisierra.edu.mx , <br>contacto@unisierra.edu.mx
+			<?php include("pie.php"); ?>
+				<!-- <p>Universidad de la Sierra. www.unisierra.edu.mx , <br>contacto@unisierra.edu.mx
 					Carretera Moctezuma – Cumpas Km. 2.5, C.P. 84560. Moctezuma, Sonora<br>
 					Teléfono: (634) 342 96 00.<br>
-					Copyright © 2014 . Reservados todos los derechos. </p>
+					Copyright © 2014 . Reservados todos los derechos. </p> -->
+
 			</div>
 		</center>
 	</div>
 </body>
 </html>
-<?php 
-	include("cssyjs.php");
-	include("pie.php");
- ?>

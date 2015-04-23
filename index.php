@@ -19,7 +19,7 @@
 
 		<div id="contenido" class="content_resize">
 			<div id="noticias">
-			
+
 				<?php 
 					require('conexion.php');
 					$conexion = mysql_connect($servidor,$usuario,$password); // conexion BD
@@ -48,7 +48,7 @@
 				    				<img src='imagenes/no_imagen.jpg'>
 				    			</td>
 				    			<td>
-				    				<p>". $resultado['descripcion'] ."<br> ". $resultado['fecha']."</p>
+				    				<p>". $resultado['descripcion'] ."<br> <b> Publicado el: :". $resultado['fecha']."</b></p>
 				    			</td>
 				    		  </tr>";
 					}

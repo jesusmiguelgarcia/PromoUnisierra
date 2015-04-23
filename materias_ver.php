@@ -6,13 +6,13 @@
 <?php 
 include("cssyjs.php");
 include("conexion.php");
-$idmateria=1;
+$idmateria=2;
  ?>
 </head>
 
 <body>
   <div class="todo">
-
+ 
 
 
 
@@ -21,7 +21,7 @@ include("cabeza.php");
 
 $conexion=mysql_connect($servidor,$usuario, $password);
 	mysql_select_db($bd);//bd
-	$sql="select nombre,descripcion,video,sitioweb from materia";
+	$sql="select nombre,descripcion,video,sitioweb from materia where idMateria=".$idmateria ;
 	$consulta=mysql_query($sql,$conexion);
 	 $resultado = mysql_fetch_array($consulta);
 	
@@ -41,7 +41,7 @@ $conexion=mysql_connect($servidor,$usuario, $password);
 		 echo "id materia:".$idmateria;
 			echo "<h2>Nombre: ".$resultado['nombre']."</h2><p> Descripcion:<br>:"
 		.$resultado["descripcion"].
-		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br><br>".$resultado['sitioweb']."<br><br>";
+		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br>".$resultado['sitioweb']."<br><br>";
 		
 
 

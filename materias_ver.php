@@ -13,7 +13,7 @@ include("conexion.php");
 	
 		echo "<b>Nombre: </b>".$resultado['nombre']."<b><br><br> Descripcion:<br> </b>:"
 		.$resultado["descripcion"].
-		":<br><br><b>Video: </b>".$resultado['video']. "<b><br><br>Sitio Web:</b><br><br><br>".$resultado['sitioWeb']."<br><br>";
+		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br><br><br>".$resultado['sitioWeb']."<br><br>";
 
 		
 	

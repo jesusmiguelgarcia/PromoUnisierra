@@ -6,7 +6,7 @@
 <?php 
 include("cssyjs.php");
 include("conexion.php");
-$idmateria=2;
+$idmateria=1;
  ?>
 </head>
 
@@ -33,14 +33,17 @@ $conexion=mysql_connect($servidor,$usuario, $password);
     <div class="content_resize">
           <div class="article">
 
-          	diseño web
+          	
           
           	<?php
 
-	
-		echo "<h2>Nombre: ".$resultado['nombre']."</h2><p> Descripcion:<br>:"
+		
+		 echo "id materia:".$idmateria;
+			echo "<h2>Nombre: ".$resultado['nombre']."</h2><p> Descripcion:<br>:"
 		.$resultado["descripcion"].
 		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br><br>".$resultado['sitioweb']."<br><br>";
+		
+
 
 
 		

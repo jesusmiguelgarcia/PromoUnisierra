@@ -6,24 +6,26 @@
 <?php 
 include("cssyjs.php");
 include("conexion.php");
-$idmateria=2;
+$idmateria=1;
+header("Content-Type: text/html;charset=utf-8");
+
  ?>
 </head>
 
 <body>
   <div class="todo">
-
-
-
-
 <?php 
 include("cabeza.php");
 
 $conexion= mysql_connect($servidor,$usuario,$password);
 mysql_select_db($bd);
 $sql="select * from materia where idmateria=".$idmateria;
+//para utf-8
+mysql_query("SET NAMES 'utf8'");
+
 $resultado=mysql_query($sql,$conexion);
 $materias=mysql_fetch_row($resultado);
+
 
  ?>
 

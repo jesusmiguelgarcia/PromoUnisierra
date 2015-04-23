@@ -58,8 +58,8 @@ CREATE TABLE IF NOT EXISTS `Materia` (
   `idMateria` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
-  `video` varchar(100) NOT NULL,
-  `sitioweb` varchar(100) NOT NULL
+  `video` varchar(200) NOT NULL,
+  `sitioweb` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

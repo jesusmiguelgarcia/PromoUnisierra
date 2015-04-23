@@ -22,3 +22,8 @@ Se esta probando gitflow para control de features y release
 buenas plantillas con css y js en :
 
 http://www.rocketwebsitetemplates.com/
+
+23 de abril para ver las ссс usar utf-8
+y
+//para utf-8
+mysql_query("SET NAMES 'utf8'");

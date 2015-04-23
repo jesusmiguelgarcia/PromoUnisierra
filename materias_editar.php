@@ -5,6 +5,11 @@
 
 <?php 
 include("cssyjs.php");
+$idmateria=1;
+if (isset($_GET["id"]))
+ {
+  $idmateria=$_GET['id'];
+}
 ?>
 </head>
 
@@ -25,16 +30,43 @@ s
 
           mysql_select_db($bd,$conexion);
 
-          $sql= "SELECT nombre, descripcion, video, sitioweb FROM `materia`"; 
+          $sql= "SELECT nombre, descripcion, video, sitioweb,idMateria FROM `materia` Where idMateria=".$idmateria; 
 
           $consulta = mysql_query($sql,$conexion); 
           $resultado = mysql_fetch_array($consulta) ;
          //echo ($resultado['nombre'].$resultado['video'].$resultado['sitioweb']);
         ?>
 
-
+       
 
 <center>
+
+<?php 
+
+if(isset($_POST["enviar"]))
+{
+
+             
+              $sql="Update materia Set video='".$_POST['video']."',sitioweb='".$_POST['sitioweb']."',descripcion='".$_POST['descripcion']."' Where idmateria=".$_POST['idmateria'];             
+              //echo $sql;
+              $consulta = mysql_query($sql,$conexion);
+              if ($consulta) 
+              {
+                echo "Actualizacion exitosa";
+              }else
+              {
+                echo "El cambio no se realizo";
+              }
+
+              echo "<br><a href='materias_ver.php' >Ver Materias</a>";
+  }
+  else 
+  {
+
+
+
+ ?>
+
 <form action="materias_editar.php" method="post" name="form">
 <table>
     <tr><font face="Comic Sans MS,arial,verdana" size="8" color="orange"><?php echo "Materia ". $resultado['nombre'];?></font></tr>
@@ -62,6 +94,7 @@ s
       <font face="Comic Sans MS,arial,verdana" size="4" color="orange">*</font>
     <br>  
       <textarea name="descripcion" rows="4" cols="50"><?php echo $resultado['descripcion'];?></textarea>
+      <input type="hidden" name="idmateria" value="<?php echo $resultado['idMateria'];?>">
     </td>
     </tr>
 
@@ -77,13 +110,14 @@ s
     <td>
     
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-      <input type="submit"  value="Guardar" class="boton">
+      <input type="submit"  name="enviar" value="Guardar" class="boton">
       <input type="reset"   value="Cancelar" class="boton">
     </td>
     </tr>
   </tr>
 </table>
 </form>
+<?php }//sierre de else ?>
 </center>
 
       

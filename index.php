@@ -8,16 +8,10 @@
 </head>
 <body>
 <div class="todo">
-	<div  class="content">
-		<div id="encabezado" >
-			<div id="logo">
-				<!-- <img src="http://www.alumnosonline.com/universidades/unisierra/logo_unisierra.jpg"> -->
-			</div>
-		</div>
-
 	<?php include("cabeza.php"); ?>
-
+	<div  class="content">
 		<div id="contenido" class="content_resize">
+
 			<div id="noticias">
 
 				<?php 

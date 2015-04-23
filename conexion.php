@@ -4,4 +4,4 @@ $usuario="iscpromocion";
 $password="unisierra123";
 $bd="iscpromocion";
 
- ?>
+?>

@@ -15,7 +15,7 @@
 		echo "Contraseña o Usuario incorrecto";
 		?>
 		<br>
-		<a href="formularioLogin.php"><b> Volver a login</b>
+		<a href="login.php"><b> Volver a login</b>
 <?php
 	}
 ?>

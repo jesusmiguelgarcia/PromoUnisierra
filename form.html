@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<style type="text/css">
+  .boton{
+        font-size:16px;
+        font-family:Verdana,Helvetica;
+        font-weight:bold;
+        color:white;
+        background:#398525;
+        border:0px;
+        width:95px;
+        height:27px;
+       }
+</style>
+
+
+<html>
+<center>
+<head>
+	<title>Modificar</title>
+
+</head>
+<body>
+<form action="materias_editar.php" method="post" name="form">
+<table>
+<tr><font face="Comic Sans MS,arial,verdana" size="8" color="orange">Modificar Materia</font></tr>
+	<tr>
+	<br><br>
+	<td>
+		<font face="Arial" size="6" color="green">Video</font>
+		<font face="Comic Sans MS,arial,verdana" size="4" color="orange">*</font>	
+	<br>	
+	<textarea name="video" rows="1" cols="50"> <?php $resultado['nombre']; <? </textarea><br>
+	</td>
+	</tr>
+	<tr>
+	<td>	
+		<font face="Arial" size="6" color="green">Sitio Web</font>
+		<font face="Comic Sans MS,arial,verdana" size="4" color="orange">*</font>
+	<br>	
+		<textarea name="sitioweb" rows="1" cols="50"></textarea>
+		<br>
+	</td>
+	</tr>
+	<tr>
+	<td>
+		<font face="Arial" size="6" color="green">Descripcion</font>
+		<font face="Comic Sans MS,arial,verdana" size="4" color="orange">*</font>
+	<br>	
+		<textarea name="descripcion" rows="4" cols="50"></textarea>
+	</td>
+	</tr>
+
+	<tr>
+	<br>
+	<td>
+			<font face="Comic Sans MS,arial,verdana" size="3" color="orange">*Campos Obligatorios</font>	
+	</td>		
+	</tr>
+
+	<tr>
+
+	<td>
+	
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<input type="submit"  value="Guardar" class="boton">
+		<input type="reset"   value="Cancelar" class="boton">
+	</td>
+	</tr>
+</tr>
+</table>
+</form>
+
+
+</body>
+</center>
+</html>

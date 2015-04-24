@@ -22,8 +22,10 @@ include("cabeza.php");
 $conexion=mysql_connect($servidor,$usuario, $password);
 	mysql_select_db($bd);//bd
 	$sql="select nombre,descripcion,video,sitioweb from materia where idMateria=".$idmateria ;
+	mysql_query("SET NAMES 'utf8'");
 	$consulta=mysql_query($sql,$conexion);
 	 $resultado = mysql_fetch_array($consulta);
+
 	
  ?>
 

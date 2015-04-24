@@ -25,7 +25,7 @@
 					<td><input type="password" name="contrasena" ></td>
 				</tr>
 			</table>
-			<input type="submit" name="Aceptar" value="iniciar"/><td> </td><input type="reset" name="Canselar" value="canselar"/>
+			<input type="submit" name="Aceptar" value="Entrar"/><td> </td><input type="reset" name="Canselar" value="Cancelar"/>
 			<?php
 				if(isset($_POST['Aceptar']))
 				{

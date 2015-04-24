@@ -27,3 +27,6 @@ http://www.rocketwebsitetemplates.com/
 y
 //para utf-8
 mysql_query("SET NAMES 'utf8'");
+
+24 de abril 
+yorlenis probando commit

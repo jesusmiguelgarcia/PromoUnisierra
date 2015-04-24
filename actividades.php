@@ -1,13 +1,12 @@
 <?php 
 require_once("conexion.php");
-//ver 1.0
 
     $conexion = mysql_connect($servidor, $usuario, $password);
     mysql_select_db($bd, $conexion) or die("No se puede seleccionar la base de datos.");
 
 if(isset($_GET['eliminar'])){
     $id = $_GET['eliminar'];
-    query("DELETE FROM actividad WHERE idActividad = '$id';");
+    mysql_query("DELETE FROM actividad WHERE idActividad = '$id';", $conexion);
 }
 
 ?>
@@ -20,7 +19,7 @@ if(isset($_GET['eliminar'])){
     <meta charset="utf-8">
     <title>Ver Actividades</title>
 </head>
-    
+    <body>
     <div class="todo">
     <div  class="content">
         <div id="encabezado" >
@@ -33,13 +32,17 @@ if(isset($_GET['eliminar'])){
 
         <div id="contenido" class="content_resize">
 
-<table  align="center"  cellspacing=1 cellpadding=1 width="100%" >
+<table  align="center"  cellspacing=1 cellpadding=1 width="100%" border="2" >
 
+<tr>
+    <td align="center">
+        <?php require_once("subMenu_actividades.php");?>
+    </td>
+</tr>
     <tr>
+        
         <td valign="top">
-            <?php require_once("subMenu_actividades.php");?>
-        </td>
-        <td valign="top"> <br><br>
+            
             <table  align="center"  cellspacing=1 cellpadding=1 width="80%">
             <tr bgcolor= "#36B911">
                 <th scope="col">Estado</th>
@@ -59,12 +62,13 @@ if(isset($_GET['eliminar'])){
                     <td><?php echo $row['acciones']; ?></td>
                     <td><?php echo $row['fecha']; ?></td>
                     <td><?php echo $row['hora']." ".$row['turno']; ?></td>
-                    <td><a href="actividades_avanze.php?id=<?php echo $row['idactividad']; ?>"><input style="color: #FFFFFF; background-color: #1C1B1B"  TYPE="button" VALUE="Avanze"></a>
-                        <a href="actividades.php?eliminar=<?php echo $row['idactividad']; ?>"><input style="color: #FFFFFF; background-color: #1C1B1B"  TYPE="button" VALUE="Eliminar"></a></td>
+                    <td><a href="actividades_avanze.php?id=<?php echo $row['idActividad']; ?>"><input style="color: #FFFFFF; background-color: #1C1B1B"  TYPE="button" VALUE="Avanze"></a>
+                        <a href="actividades.php?eliminar=<?php echo $row['idActividad']; ?>"><input style="color: #FFFFFF; background-color: #1C1B1B"  TYPE="button" VALUE="Eliminar"></a></td>
                     </tr>
                     <?php
                 }
             ?>
+            </table>
          </td>
     </tr>
 </table>

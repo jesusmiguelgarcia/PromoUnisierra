@@ -5,14 +5,14 @@ require_once("conexion.php");
     mysql_select_db($bd, $conexion) or die("No se puede seleccionar la base de datos.");
 
 if(isset($_POST['registrar'])){
+
     $estado =$_POST['estado'];
     $encargado =$_POST['encargado'];
     $fecha =$_POST['fecha'];
     $hora =$_POST['hora']; $turno = $_POST['turno'];
     $acciones =$_POST['acciones'];
     $x=1;
-
-    mysql_query("INSERT INTO actividad (idActividad, estado, encargado, acciones, fecha, hora, turno, Usuario_idUsuario) VALUES (NULL,".$estado."', '".$encargado."','".$acciones."','".$fecha."','".$hora."','".$turno."','".$x."')", $conexion);
+    mysql_query("INSERT INTO actividad (idActividad, estado, encargado, acciones, fecha, hora, turno, Usuario_idUsuario) VALUES (NULL,'".$estado."', '".$encargado."','".$acciones."','".$fecha."','".$hora."','".$turno."', '".$x."')" , $conexion);
     header('LOCATION: actividades.php');
 }
 ?>
@@ -24,6 +24,36 @@ if(isset($_POST['registrar'])){
 <head>
     <meta charset="utf-8">
     <title>Ver Actividades</title>
+    <script type="text/javascript">
+        function valida (form){
+            var error = false;
+            if(form.encargado.value == "" ||  form.encargado.value.length >15){
+                document.getElementById('errorEncargado').innerHTML = "Error en Encargado";
+                error = true;
+            }else{
+                document.getElementById('errorEncargado').innerHTML = "";
+            }
+            if(form.fecha.value.length != 10){
+                document.getElementById('errorFecha').innerHTML = "Error en Fecha";
+                error = true;
+            }else{
+                document.getElementById('errorFecha').innerHTML = "";
+            }
+            if(form.hora.value.length != 5 & form.hora.value.length != 8){
+                document.getElementById('errorHora').innerHTML = "Error en Hora";
+                error = true;
+            }else{
+                document.getElementById('errorHora').innerHTML = "";
+            }
+            if(form.acciones.value.length > 100 || form.acciones.value == ""){
+                document.getElementById('errorAcciones').innerHTML = "Error en Acciones";
+                error = true;
+            }else{
+                document.getElementById('errorAcciones').innerHTML = "";
+            }
+           if (error) return false; else return true;
+        }
+    </script>
 </head>
 <body>
 
@@ -41,14 +71,17 @@ if(isset($_POST['registrar'])){
 
 <table  align="center" cellspacing=1 cellpadding=1 width="100%"  border="0">
     <tr>
-        <td valign="top" width="35%" align="left">
+        <td align="center">
             <?php require_once("subMenu_actividades.php");?>
         </td>
-        <td valign="top" align="left"> <br><br>
-            <form method="POST" action="actividades_registro.php">
-                <table  align="left" cellspacing=1 cellpadding=1 width="80%">
+    </tr>
+    <tr>
+        
+        <td valign="top" align="center"> 
+            <form method="POST" action="actividades_registro.php" onsubmit="return valida(this);">
+                <table  align="center" cellspacing=1 cellpadding=1 width="80%">
         <tr> <tr bgcolor= "#36B911">
-        <TABLE align="left" border="1">
+        <TABLE align="center" border="1">
         <TR> 
             <Th style="color: #FFFFFF; background-color: #36B911">Estado</Th>
             <TD>
@@ -62,12 +95,18 @@ if(isset($_POST['registrar'])){
             <Th style="color: #FFFFFF; background-color: #36B911" >Encargado</TH>
             <TD >
             <INPUT type=text name="encargado"  size="15">
+            <font color="red">
+            <div id="errorEncargado" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR>
             <Th style="color: #FFFFFF; background-color: #36B911">Fecha</Th>
             <TD >
             <INPUT type=text name="fecha" placeholder="AAAA-MM-DD"  size="15">
+             <font color="red">
+            <div id="errorFecha" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR> 
@@ -78,12 +117,18 @@ if(isset($_POST['registrar'])){
                     <OPTION VALUE="am">am</OPTION>
                     <OPTION VALUE="pm">pm</OPTION>
                 </SELECT>
+                 <font color="red">
+            <div id="errorHora" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR>
             <Th style="color: #FFFFFF; background-color: #36B911">Acciones</Th>
             <TD >
             <TEXTAREA rows="3" name="acciones" cols="24" placeholder="Describa las acciones..."></TEXTAREA>
+             <font color="red">
+            <div id="errorAcciones" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR>

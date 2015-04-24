@@ -6,7 +6,7 @@ require_once("conexion.php");
 
 if(isset($_GET['id'])){
     $id=$_GET['id'];
-    $result = query("SELECT * FROM actividad WHERE idActividad = $id");
+    $result = mysql_query("SELECT * FROM actividad WHERE idActividad = $id", $conexion);
     $row = mysql_fetch_array($result);
 
 } else if (isset($_POST['modificar'])){
@@ -29,6 +29,36 @@ if(isset($_GET['id'])){
 <head>
     <meta charset="utf-8">
     <title>Ver Actividades</title>
+    <script type="text/javascript">
+        function valida (form){
+            var error = false;
+            if(form.encargado.value == "" ||  form.encargado.value.length >15){
+                document.getElementById('errorEncargado').innerHTML = "Error en Encargado";
+                error = true;
+            }else{
+                document.getElementById('errorEncargado').innerHTML = "";
+            }
+            if(form.fecha.value.length != 10){
+                document.getElementById('errorFecha').innerHTML = "Error en Fecha";
+                error = true;
+            }else{
+                document.getElementById('errorFecha').innerHTML = "";
+            }
+            if(form.hora.value.length != 5 & form.hora.value.length != 8){
+                document.getElementById('errorHora').innerHTML = "Error en Hora";
+                error = true;
+            }else{
+                document.getElementById('errorHora').innerHTML = "";
+            }
+            if(form.acciones.value.length > 100 || form.acciones.value == ""){
+                document.getElementById('errorAcciones').innerHTML = "Error en Acciones";
+                error = true;
+            }else{
+                document.getElementById('errorAcciones').innerHTML = "";
+            }
+           if (error==true) return false; else return true;
+        }
+    </script>
 </head>
 <body>
 
@@ -46,14 +76,17 @@ if(isset($_GET['id'])){
 
 <table  align="center" cellspacing=1 cellpadding=1 width="100%"  border="0">
     <tr>
-        <td valign="top" width="35%" align="left">
+        <td align="center">
             <?php require_once("subMenu_actividades.php");?>
         </td>
-        <td valign="top" align="left"> <br><br>
-            <form method="POST" action="actividades_avanze.php">
-                <table  align="left" cellspacing=1 cellpadding=1 width="80%">
+    </tr>
+    <tr>
+        
+        <td valign="top" align="center"> 
+            <form method="POST" action="actividades_avanze.php" onsubmit="return valida(this);">
+                <table  align="center" cellspacing=1 cellpadding=1 width="80%">
         <tr> <tr bgcolor= "#36B911">
-        <TABLE align="left">
+        <TABLE align="center">
         <TR> 
         <input type="hidden" value="<?php echo $row['idActividad']; ?>" name="id">
             <Th style="color: #FFFFFF; background-color: #36B911">Estado</Th>
@@ -67,8 +100,7 @@ if(isset($_GET['id'])){
                 <OPTION VALUE="Incompleto" SELECTED>Incompleto</OPTION>
                 <OPTION VALUE="Completo" >Completo</OPTION> <?php
             }
-            ?>
-                
+            ?>  
             </SELECT>
             </TD>
         </TR>
@@ -76,12 +108,18 @@ if(isset($_GET['id'])){
             <Th style="color: #FFFFFF; background-color: #36B911" >Encargado</TH>
             <TD>
             <INPUT type=text name="encargado" value="<?php echo $row['encargado']; ?>" size="15">
+            <font color="red">
+            <div id="errorEncargado" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR>
             <Th style="color: #FFFFFF; background-color: #36B911">Fecha</Th>
             <TD>
             <INPUT type=text name="fecha" value="<?php echo $row['fecha']; ?>" placeholder="AAAA/MM/DD" size="15">
+            <font color="red">
+            <div id="errorFecha" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR> 
@@ -99,12 +137,18 @@ if(isset($_GET['id'])){
                     }
                     ?>
                 </SELECT>
+                <font color="red">
+            <div id="errorHora" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR>
             <Th style="color: #FFFFFF; background-color: #36B911">Acciones</Th>
             <TD>
             <TEXTAREA rows="3" name="acciones" cols="24" placeholder="Describa las acciones..."><?php echo $row['acciones']; ?></TEXTAREA>
+            <font color="red">
+            <div id="errorAcciones" align="center"></div>
+            </font>
             </TD>
         </TR>
         <TR>

@@ -37,7 +37,7 @@
 					<td><a href="formularioBorrar.php"><b><center>Borrar Usuario</center></b></td>
 					<td></td>
 					<td></td>
-					<td><left><a href="formularioLogin.php"><b><center>Salir</b></center></td></left>
+					<td><left><a href="Login.php"><b><center>Salir</b></center></td></left>
 				</tr>
 			</table
 			<br>

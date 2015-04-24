@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<?php include("CSSyJS");?>
+		<?php include("CSSyJS.php");?>
 		<meta charset="utf-8"/>
 		<title>Registro</title>
 	</head>
@@ -16,7 +16,7 @@
 		<table><left>
 		<tr>
 			<td><left><a href="listaUsuarios.php"><b>Volver</b></left></td>
-			<td><left><a href="formularioLogin.php"><b>Salir</b></left></td>
+			<td><left><a href="Login.php"><b>Salir</b></left></td>
 		</tr>
 		<form method="POST" action="registro.php"/>
 			<table>

@@ -31,7 +31,7 @@ s
           mysql_select_db($bd,$conexion);
 
           $sql= "SELECT nombre, descripcion, video, sitioweb,idMateria FROM `materia` Where idMateria=".$idmateria; 
-          mysql_query("SET NAMES 'utf-8'");
+          mysql_query("SET NAMES 'utf8'");
           $consulta = mysql_query($sql,$conexion); 
           $resultado = mysql_fetch_array($consulta) ;
          //echo ($resultado['nombre'].$resultado['video'].$resultado['sitioweb']);

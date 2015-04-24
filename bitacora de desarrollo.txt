@@ -30,3 +30,42 @@ mysql_query("SET NAMES 'utf8'");
 
 24 de abril 
 yorlenis probando commit
+
+datos para actividades
+
+INSERT INTO `actividad` (`idActividad`, `estado`, `encargado`, `acciones`, `fecha`, `hora`, `turno`, `Usuario_idUsuario`) VALUES
+(1, 'Completo', 'Martin Cordova', 'CBTa Moctezuma', '2015-04-10', '04:00:00', 'pm', 1),
+(2, 'Completo', 'Miguel Garcia', 'CECyTES Sahuaripa', '2015-04-05', '10:30:00', 'am', 1),
+(3, 'Incompleto', 'Aldo Juarez', 'cobach Agua Prieta', '2015-05-11', '04:14:00', 'pm', 1),
+(4, 'Incompleto', 'David Madrid', 'Conalep Nacozari', '2015-05-23', '04:00:00', 'pm', 1),
+(5, 'Completo', 'Ulises Ponce', 'CBTis Hermosillo', '2015-04-13', '09:00:00', 'am', 1);
+
+datos para noticias
+
+
+INSERT INTO `noticia` (`idNoticia`, `tituloNoticia`, `descripcion`, `imagen`, `fecha`, `Usuario_idUsuario`) VALUES
+(1, 'Baile Dia del Estudiante', 'El dia 22 de mayo del 2015 el comite prograduacion de la Universidad de la Sierra realizara el clasico baile del dia del estudiante donde se coronara a la reyna unisierra 2015', NULL, '2015-04-22', 1),
+(2, 'Fin del Semestre', 'Vacaciones de verano 2015, el semestre concluye este 5 de Junio del 2015', NULL, '2015-06-05', 1),
+(3, 'Mega Puente', 'El dia 1 de mayo comenzara el mega puente concluyendo el 4 de mayo.', NULL, '2015-04-30', 1),
+(4, 'Dia del Estudiente', 'El dia 24 de mayo celebramos el dia del estudiante en la Universidad de la Sierra,\r\nque posiblemente sea festejado el 22 de mayo', NULL, '2015-05-18', 1),
+(5, 'Viaje de Estudios', 'Los alumnos del octavo semestre realizaran un viaje de estudios a la mina santa clara en Banamichi, Sonora', NULL, '2015-04-28', 1),
+(6, 'Promocion Unisierra ', 'Profesores de la carrera de Telematica y Sistemas estan promocionando la nueva carrera de ingenieria en Sistemas Computacionales', NULL, '2015-04-22', 1),
+(7, 'Reyna Unisierra', 'Hoy se abrieron las inscripciones para poseer la corna unisierra 2015.', NULL, '2015-04-21', 1);
+
+
+datos para usuarios en caso de no tener
+
+
+INSERT INTO `usuario` (`idUsuario`, `nombre`, `apellido`, `tipo`, `edad`, `sexo`, `carrera`, `provincia`, `email`, `telefono`, `contraseña`) VALUES
+(1, 'Jorge', 'Urquijo', 'Admin', 20, 'Masculino', 'ITS', 'Huasabas', 'jorgedzo_17@hotmail.com', NULL, 'unisierra123');
+
+modificacion de martin a tabla actividades de
+
+ALTER TABLE `actividad` ADD `turno` VARCHAR( 2 ) NOT NULL ;
+
+agregar auto incremento en tablas
+
+ALTER TABLE `materia` CHANGE `idMateria` `idMateria` INT( 11 ) NOT NULL AUTO_INCREMENT ;
+
+
+

@@ -8,6 +8,16 @@ include("cssyjs.php");
 include("conexion.php");
 $idmateria=1;
 header("Content-Type: text/html;charset=utf-8");
+// datos foto,nombre, titulo, rol, comentario
+$dev= array(
+  array("mike.jpg","Jesus Miguel Garcia","Profesor","Jefe de Proyecto","PHP excelente"),
+  array("jorsh.jpg","Jorge Urquijo","Alumno ITS","Programador","PHP excelente"),
+  array("jacel.jpg","Jacel Pedrego","Alumno ITS","Programador","PHP excelente"),
+  array("jaime.jpg","Jaime Bustos","Alumno ITS","Programador","PHP excelente"),
+  array("yorlenis.jpg","Yorlenis ","Alumno ITS","Programador","PHP excelente"),
+  array("juan.jpg","Juan ","Alumno ITS","Programador","PHP excelente"),
+  array("martin.jpg","Martin ","Alumno ITS","Programador","PHP excelente"),
+  );
 
  ?>
 </head>
@@ -111,6 +121,7 @@ $variable_video="https://www.youtube.com/embed/51XAEDHdMQY";
           </p>
 
     </div>
+
 
 
 

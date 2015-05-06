@@ -21,7 +21,7 @@
 
 						 	mysql_select_db($bd,$conexion);
 
-							$sql= "SELECT idNoticia, tituloNoticia, descripcion, fecha FROM `noticia` order by fecha desc"; // consulta a ejectuar
+							$sql= "SELECT idNoticia, tituloNoticia, descripcion, fecha, imagen FROM `noticia` order by fecha desc"; // consulta a ejectuar
 
 							$consulta = mysql_query($sql,$conexion); // realiza la consulta (instruccion,conexion a bd)
 						?>
@@ -40,8 +40,13 @@
 						    		 </tr>";
 
 						    	echo "<tr>
-						    			<td>
-						    				<img src='imagenes/no_imagen.jpg'>
+						    			<td>";
+						 ?>
+						 <?php echo "<img src='noticia_crear_img.php?idNoticia=".$resultado[4]."'>"; ?>
+					
+						<?php
+									echo "
+						    			
 						    			</td>
 						    			<td>
 						    				<h3>". $resultado['descripcion'] ."<br> <b>Publicado el: ". $resultado['fecha']."</b></h3>
@@ -52,96 +57,6 @@
 						 ?>
 
 						</table></center>
-
-		<!-- 				<table border="0" width="100%">
-			<tr>
-				<td><h1>Noticia 1:</h1>
-					<table>
-						<tr>
-							<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
-							<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>	
-					</table>
-				</td>
-				<td>&nbsp&nbsp&nbsp&nbsp</td>
-				<td><h1>Noticia 4:</h1>
-					<table>
-						<tr>
-							<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
-							<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>	
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td><h1>Noticia 2:</h1>
-					<table>
-						<tr>
-							<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
-							<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>	
-					</table>
-				</td>
-				<td>&nbsp&nbsp&nbsp&nbsp</td>
-				<td><h1>Noticia 5:</h1>
-					<table>
-						<tr>
-							<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
-							<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>	
-					</table>
-				</td>
-			</tr>
-			<tr>
-				<td><h1>Noticia 3:</h1>
-					<table>
-						<tr>
-							<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
-							<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>	
-					</table>
-				</td>
-				<td>&nbsp&nbsp&nbsp&nbsp</td>
-				<td><h1>Noticia 6:</h1>
-					<table>
-						<tr>
-							<td rowspan="2"> <img src="imagenes/no_imagen.jpg"></td>
-							<td><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></td>
-						</tr>	
-					</table>
-				</td>
-			</tr>
-		</table> -->
 					</div>
 				</div>
 					<center>

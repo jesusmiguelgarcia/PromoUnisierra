@@ -3,10 +3,13 @@
 <title>Ayuda</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<?php 
+<?php
 include("cssyjs.php");
 include("conexion.php");
 $idmateria=1;
+$d=1;
+echo $d;
+
 header("Content-Type: text/html;charset=utf-8");
 // datos foto,nombre, titulo, rol, comentario
 $dev= array(
@@ -19,22 +22,29 @@ $dev= array(
   array("martin.jpg","Martin ","Alumno ITS","Programador","PHP excelente"),
   );
 
+
+
+
  ?>
 </head>
 
 <body>
   <div class="todo">
-<?php 
+<?php
 include("cabeza.php");
 
-$conexion= mysql_connect($servidor,$usuario,$password);
+$conexion= mysql_connect($servidor, $usuario, $password);
 mysql_select_db($bd);
 $sql="select * from materia where idmateria=".$idmateria;
 //para utf-8
 mysql_query("SET NAMES 'utf8'");
 
-$resultado=mysql_query($sql,$conexion);
+$resultado=mysql_query($sql, $conexion);
 $materias=mysql_fetch_row($resultado);
+
+if ($valor=1) {
+    echo "hola";
+}
 
 
  ?>
@@ -49,12 +59,12 @@ $materias=mysql_fetch_row($resultado);
           <h2><span>Mike</span></h2><div class="clr"></div>
           <p><span class="date">March 16, 2018</span> &nbsp;|&nbsp Posted by <a href="#">Owner</a> &nbsp;|&nbsp; Filed under <a href="#">templates</a>, <a href="#">internet</a> <a href="#" class="com">Comments (11) &raquo;</a></p>
           <img src="imagenes/mike.jpg"  height="199" alt="image" />
-          <p>This is a free CSS website template by <a href="http://www.rocketwebsitetemplates.com/" title="Website Templates">RocketWebsiteTemplates.com</a>. This 
-work is distributed under the <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>, 
+          <p>This is a free CSS website template by <a href="http://www.rocketwebsitetemplates.com/" title="Website Templates">RocketWebsiteTemplates.com</a>. This
+work is distributed under the <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 License</a>,
 which means that you are free to use it for any personal or commercial purpose provided you credit me in the form of a link back to <a href="http://www.rocketwebsitetemplates.com/" title="Website Templates">RocketWebsiteTemplates.com</a>.</p>
   <p class="spec"><a href="#" class="rm">Read more &raquo;</a></p>
-  <p> 
-    <?php  
+  <p>
+    <?php
     echo "Primer usuario en BD: ".$usuarios[1];
     ?>
   <p>
@@ -133,8 +143,6 @@ $variable_video="https://www.youtube.com/embed/51XAEDHdMQY";
 </div>
 
   
- <?php 
-include("pie.php");
- ?>
-
- 
+            <?php
+            include("pie.php");
+            ?>

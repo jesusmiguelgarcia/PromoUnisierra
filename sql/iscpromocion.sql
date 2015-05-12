@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `Actividad` (
-  `idActividad` int(11) NOT NULL,
+  `idActividad` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(10) NOT NULL,
   `encargado` varchar(15) NOT NULL,
   `acciones` varchar(100) NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS `Actualiza` (
 --
 
 CREATE TABLE IF NOT EXISTS `Materia` (
-  `idMateria` int(11) NOT NULL,
+  `idMateria` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
   `video` varchar(200) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `Materia` (
 --
 
 CREATE TABLE IF NOT EXISTS `Noticia` (
-  `idNoticia` int(11) NOT NULL,
+  `idNoticia` int(11) NOT NULL AUTO_INCREMENT,
   `tituloNoticia` varchar(50) NOT NULL,
   `descripcion` text NOT NULL,
   `imagen` blob,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `Noticia` (
 --
 
 CREATE TABLE IF NOT EXISTS `Usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(40) NOT NULL,
   `tipo` varchar(20) NOT NULL,
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `Usuario` (
   `provincia` varchar(40) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefono` varchar(20) DEFAULT NULL,
-  `contraseña` varchar(15) NOT NULL
+  `password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --

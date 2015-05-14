@@ -1,3 +1,17 @@
+<?php
+ 	session_start();
+ 	if(isset($_SESSION["tipo"]))
+ 	{
+ 		if ($_SESSION["tipo"]==0)
+ 		{
+ 			header("location:index.php");
+ 		}
+ 	}else 
+ 	{
+ 		header("location:index.php");
+ 	}
+
+?>
 <html>
 <head>
 <title>ModificarMateria</title>
@@ -14,7 +28,8 @@ if (isset($_GET["id"]))
 </head>
 
 <body>
-<?php 
+<?php
+
 include("cabeza.php");
  ?>
 s

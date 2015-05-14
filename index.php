@@ -15,6 +15,8 @@
 
 					<div id="noticias">
 
+					<img src="create_img.php?idpic=10">
+
 						<?php 
 							require('conexion.php');
 							$conexion = mysql_connect($servidor,$usuario,$password); // conexion BD

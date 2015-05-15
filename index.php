@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,8 +15,6 @@
 				<div id="contenido" class="content_resize">
 
 					<div id="noticias">
-
-					<img src="create_img.php?idpic=10">
 
 						<?php 
 							require('conexion.php');
@@ -44,7 +43,9 @@
 						    	echo "<tr>
 						    			<td>";
 						 ?>
-						 <?php echo "<img src='noticia_crear_img.php?idNoticia=".$resultado[4]."'>"; ?>
+						<img src="create_img.php?idpic=<?php echo $id; ?> " WIDTH=200 HEIGHT=100>
+						<!-- <img src="noticia_crear_img.php?idpic=<?php echo $id; ?> " WIDTH=200 HEIGHT=100> -->
+					<!-- <?php echo "<img src=noticia_crear_img.php?idpic=".$id.">"; ?> -->
 					
 						<?php
 									echo "

@@ -1,6 +1,10 @@
 <html>
 	<head>
-		<?php include("CSSyJS.php");?>
+		
+		<?php
+			include("CSSyJS.php");
+			session_start();
+		?>
 		<meta charset="utf-8"/>
 		<title>Registro</title>
 	</head>

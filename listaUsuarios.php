@@ -24,10 +24,11 @@
 					<td><a href="formularioAgregar.php"><b><center>Nuevo Usuario</center></b></td>
 					<td><a href="buscaUsuario.php"><b><center>Buscar Usuario</center></b></td>
 					<td><a href="formularioBorrar.php"><b><center>Borrar Usuario</center></b></td>
+					<td><a href="formularioActualizar.php"><b><center>Editar Usuario</center></b></td>
 					<td></td>
 					<td></td>
 
-					<td><left><a href="formularioLogin.php"><b><center>Salir</b></center></td></left>
+					<td><left><a href="Login.php"><b><center>Salir</b></center></td></left>
 				</tr>
 			</table
 			<br>

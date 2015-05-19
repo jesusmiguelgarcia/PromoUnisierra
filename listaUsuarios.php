@@ -1,5 +1,15 @@
 <?php
 	session_start();
+	if(isset($_SESSION["tipo"]))
+	{
+		if($_SESSION["tipo"]!=1)
+		{
+			header("location:index.php");
+		}
+	}
+    print_r($_SESSION["nombre"]);
+	print_r($_SESSION["tipo"]);
+
 	require('conexion.php');
 	$conexion=mysql_connect($servidor,$usuario,$password);  //conexion bd
 	mysql_select_db($bd,$conexion);

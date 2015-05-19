@@ -1,11 +1,10 @@
 <?php
 	$nom=$_REQUEST['nombre'];
-	$contra=$_REQUEST['contrasena'];
+	$pass=$_REQUEST['password'];
 	require('conexion.php');
-	$conexion = mysql_connect($servidor,$usuario,$password);
-	or die("Problemas al conectar con el servidor");
-	mysql_select_db("iscpromocion",$conexion) or die("Error al tratar de conectar con la base de datos");
-	$login=mysql_query("SELECT * FROM usuario where nombre = '".$nom."'and contrasena='".$contra."'",$conexion);
+	$conexion = mysql_connect($servidor,$usuario,$password) or die("Problemas al conectar con el servidor");
+	mysql_select_db($bd,$conexion) or die("Error al tratar de conectar con la base de datos");
+	$login=mysql_query("SELECT * FROM usuario where nombre = '".$nom."'and password='".$pass."'",$conexion);
 
 	if($us=mysql_fetch_array($login))
 	{

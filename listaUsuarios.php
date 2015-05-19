@@ -1,9 +1,21 @@
 <?php
-	session_start();
-	require('conexion.php');
-	$conexion = mysql_connect($servidor,$usuario,$password); // conexion BD
-    mysql_select_db($bd,$conexion);
-	$result=mysql_query("SELECT * FROM usuario",$conexion);
+	function conectarse()
+	{
+		if(!($link=mysql_connect("localhost","root","")))
+		{
+			echo "Error conectando con la base de datos";
+			exit();
+		}
+		if(!(mysql_select_db("iscpromocion",$link)))
+		{
+			echo "Error seleccionando la base de datos";
+			exit();
+		}
+		return $link;
+	}
+	$link=conectarse();
+	
+	$result=mysql_query("SELECT * FROM usuario",$link);
 ?>
 <html>
 	<head>
@@ -20,13 +32,12 @@
 		<center>
 			<table>
 				<tr>
-					<td><a href="formularioAgregar.php"><b><center>Nuevo Usuario</center></b></td>
+					<td><a href="formulario.php"><b><center>Nuevo Usuario</center></b></td>
 					<td><a href="buscaUsuario.php"><b><center>Buscar Usuario</center></b></td>
 					<td><a href="formularioBorrar.php"><b><center>Borrar Usuario</center></b></td>
-					<td><a href="editarUsuarios.php"><b><center>Editar Usuario</center></b></td>
 					<td></td>
 					<td></td>
-					<td><left><a href="formularioLogin.php"><b><center>Salir</b></center></td></left>
+					<td><left><a href="Login.php"><b><center>Salir</b></center></td></left>
 				</tr>
 			</table
 			<br>
@@ -40,10 +51,11 @@
 					}
 					mysql_free_result($result);
 					
-					mysql_close($conexion);
+					mysql_close($link);
 				?>
 			</table>
 		</center>
+		
 		</div>
 		<?php
 				include("pie.php");

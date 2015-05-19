@@ -1,5 +1,4 @@
 <?php
-	
 	session_start();
 	require('conexion.php');
 	$conexion=mysql_connect($servidor,$usuario,$password);  //conexion bd
@@ -9,11 +8,19 @@
 ?>
 <html>
 	<head>
-	<center>
-	<table>
-	<tr>
-
-
+	<?php include("CSSyJS.php");?>
+	<meta charset="utf-8"/>
+	<h1>Alumnos</h1>
+	<body>
+	<div class ="todo">
+	<div class="content">
+		<?php
+			include("cabeza.php");
+		?>
+		<div class="content_resize">
+		<center>
+			<table>
+				<tr>
 					<td><a href="formularioAgregar.php"><b><center>Nuevo Usuario</center></b></td>
 					<td><a href="buscaUsuario.php"><b><center>Buscar Usuario</center></b></td>
 					<td><a href="formularioBorrar.php"><b><center>Borrar Usuario</center></b></td>
@@ -24,6 +31,9 @@
 				</tr>
 			</table
 			<br>
+			<br>
+			<TABLE BORDER=1 CELLSPACING=1 CELLPADDING=1>
+					<TR><TD><b><center>id Usuario</center></b></TD><TD><b><center>Nombre</center></b></TD><TD><b><center>Apellido</center></b></TD><TD><b><center> Tipo Usuario</center></b></TD><TD><b><center> Edad</center></b></TD><TD><b><center> Sexo </center></b></TD><TD><b><center> Carrera</center></b></TD><TD><b><center> Provincia</center></b></TD><TD><b><center> Email</center></b></TD><TD><b><center> Telefono </center></b></TD><TD><b><center> Contraseña </center></b></TD></TR>
 			<?php
 			
 					while($row=mysql_fetch_array($result))

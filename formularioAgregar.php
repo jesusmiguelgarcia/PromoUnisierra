@@ -21,10 +21,6 @@
 		<form method="POST" action="registro.php"/>
 			<table>
 				<tr>
-					<td>id Usuario</td>
-					<td><input type="text" name="idUsuario" /></td>
-				</tr>
-				<tr>
 					<td>Nombre</td>
 					<td><input type="text" name="nombre" /></td>
 				</tr>
@@ -62,17 +58,17 @@
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="contrasena" /></td>
+					<td><input type="password" name="password" /></td>
 				</tr>
 			</table>
 			<input type="submit" name="Aceptar" value="Registrar"/><td> </td><input type="reset" name="Canselar" value="canselar"/>
 		
-		<?php
-			if(isset($_POST['Aceptar']))
-			{
-				require("registro.php");
-			}
-		?>
+					<?php
+						if(isset($_POST['Aceptar']))
+						{
+							require("registro.php");
+						}
+					?>
 		</form>
 		</center>
 		<?php	

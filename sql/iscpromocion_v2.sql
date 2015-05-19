@@ -126,7 +126,7 @@ INSERT INTO `noticia` (`idNoticia`, `tituloNoticia`, `descripcion`, `imagen`, `f
 --
 
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(40) NOT NULL,
   `tipo` varchar(20) NOT NULL,

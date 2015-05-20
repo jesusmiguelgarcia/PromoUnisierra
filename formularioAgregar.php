@@ -4,6 +4,15 @@
 		<?php
 			include("CSSyJS.php");
 			session_start();
+			if(isset($_SESSION["tipo"]))
+			{
+				if($_SESSION["tipo"]!=1)
+				{
+					header("location:index.php");
+				}
+			}
+			print_r($_SESSION["nombre"]);
+			print_r($_SESSION["tipo"]);
 		?>
 		<meta charset="utf-8"/>
 		<title>Registro</title>

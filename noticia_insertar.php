@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,7 +27,8 @@
 									<td rowspan="2">
  <!--Descripcion -->				<textarea name="descripcion" placeholder="Cuerpo de la noticia" cols="50" 										rows="10"></textarea>
 									</td>
-									
+									<?php $fecha = date("Y"."-"."m"."-"."d"); 
+									echo $fecha; ?>
 								</tr>
 								<tr>
 									<td></td>
@@ -59,6 +61,7 @@
 </html>
 
 <?php 
+
 	if(isset($_POST['agregar']))
 	{
 		require('conexion.php');
@@ -71,8 +74,8 @@
 		 //echo $imagen . "<br>";
 		 $formato = "jpg";
 		  // Y, grabo la imágen en la base de datos en el item definido como BLOB
-		 $consulta="INSERT INTO noticia (tituloNoticia, descripcion, imagen, fecha,Usuario_idUsuario)  
-		 VALUES ('".$_POST['titulo']."','".$_POST['descripcion']."','".$imagen."','2015-05-05','1' )";
+		 $consulta="INSERT INTO noticia (tituloNoticia, descripcion, imagen, fecha, Usuario_idUsuario)  
+		 VALUES ('".$_POST['titulo']."','".$_POST['descripcion']."','".$imagen."','".$fecha."','1' )";
 		 $result = mysql_query($consulta);
 		 //echo $consulta;
 	}

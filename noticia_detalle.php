@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -41,7 +42,8 @@
 
 						    	echo "<tr>
 						    			<td>
-						    				<img src='imagenes/no_imagen.jpg'>
+						    			<img src='create_img.php?idpic=$idNoticia;'  WIDTH=400 HEIGHT=250>
+						    				
 						    			</td>
 						    			<td>
 						    				<h3>". $resultado['descripcion'] ."<br> <b>Publicado el: ". $resultado['fecha']."</b></h3>

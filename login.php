@@ -1,3 +1,6 @@
+<?php
+	session_start();
+	?>
 <html>
 	<head>
 		<?php include("CSSyJS.php");?>
@@ -22,7 +25,7 @@
 				</tr>
 				<tr>
 					<td>Password</td>
-					<td><input type="password" name="contrasena" ></td>
+					<td><input type="password" name="password" ></td>
 				</tr>
 			</table>
 			<input type="submit" name="Aceptar" value="Entrar"/><td> </td><input type="reset" name="Canselar" value="Cancelar"/>

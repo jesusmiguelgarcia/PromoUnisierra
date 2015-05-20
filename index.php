@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,7 +8,7 @@
 		<title>Noticias </title>
 	</head>
 
-	<body>
+	<body> 
 		<div class="todo">
 			<?php include("cabeza.php"); ?>
 			<div  class="content">
@@ -21,40 +22,57 @@
 
 						 	mysql_select_db($bd,$conexion);
 
-							$sql= "SELECT idNoticia, tituloNoticia, descripcion, fecha, imagen FROM `noticia` order by fecha desc"; // consulta a ejectuar
+/*Consulta SQL*/				$sql= "SELECT idNoticia, tituloNoticia, descripcion, fecha, imagen FROM `noticia` order by fecha desc"; // consulta a ejectuar
 
 							$consulta = mysql_query($sql,$conexion); // realiza la consulta (instruccion,conexion a bd)
 						?>
 
 			 			<center> <table border="0" cellspacing="10" align="">
+			 			<?php 
+			 					if(isset($_SESSION['Nombre'])){
+									if($_SESSION['Tipo'] == 1){
+										echo "
+											<a href = 'noticia_insertar.php?'> Nueva Noticia</a>";
+									}
+								}
+			 			 ?>
 						
-						<?php 
+<!-- resultados SQL -->	<?php 
 							while ($resultado = mysql_fetch_array($consulta)) 
 							{	
 								$id = $resultado['idNoticia'];
 
-						    	echo "<tr>
+/*Poner titulo noticia*/		echo "<tr>
 						    			<td colspan = '2'> 
 						    				<h1>". $resultado['tituloNoticia']."</h1>
 						    			</td>
 						    		 </tr>";
 
-						    	echo "<tr>
+/*pone imagen de noticia*/    	echo "<tr>
 						    			<td>";
 						 ?>
-						 <?php echo "<img src='noticia_crear_img.php?idNoticia=".$resultado[4]."'>"; ?>
+						<img src="create_img.php?idpic=<?php echo $id; ?> " WIDTH=200 HEIGHT=100>
 					
-						<?php
-									echo "
-						    			
-						    			</td>
+							<?php
+/*Pone cuerpo de la noticia*/  echo "
+						    		</td>
 						    			<td>
 						    				<h3>". $resultado['descripcion'] ."<br> <b>Publicado el: ". $resultado['fecha']."</b></h3>
-												<a href = 'noticia_detalle.php?id=$id'> ver mas </a>
+												<a href = 'noticia_detalle.php?id=$id'> Ver mas </a>";
+
+												if(isset($_SESSION['Nombre'])){
+													if($_SESSION['Tipo'] == 1){
+														echo " 
+														<a href = 'noticia_eliminar.php?id=$id'> Editar </a> 
+														<a href = 'noticia_eliminar.php?id=$id'> Eliminar </a>";
+													}
+												}
+
+										echo "
 						    			</td>
-						    		  </tr>";
-							}
-						 ?>
+						    		</tr>";
+							}//end While
+						 	?>
 
 						</table></center>
 					</div>

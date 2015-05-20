@@ -1,12 +1,15 @@
-<?php 
+<?php
+session_start(); 
 require_once("conexion.php");
+require_once("claseActividades.php");
 
     $conexion = mysql_connect($servidor, $usuario, $password);
     mysql_select_db($bd, $conexion) or die("No se puede seleccionar la base de datos.");
 
 if(isset($_GET['eliminar'])){
     $id = $_GET['eliminar'];
-    mysql_query("DELETE FROM actividad WHERE idActividad = '$id';", $conexion);
+    $acti = new actividades();
+    $acti->eliminar($id);
 }
 
 ?>
@@ -33,12 +36,15 @@ if(isset($_GET['eliminar'])){
         <div id="contenido" class="content_resize">
 
 <table  align="center"  cellspacing=1 cellpadding=1 width="100%" border="2" >
-
+<tr><td align="center"><?php if(isset($_SESSION['nombre']))echo"<h1>Bienvenido ".$_SESSION['nombre']."</h1><br>"; ?></td></tr>
+<?php if(isset($_SESSION['tipo'])){if($_SESSION['tipo']==1){ ?>
 <tr>
     <td align="center">
-        <?php require_once("subMenu_actividades.php");?>
+        
+        <?php require_once("subMenu_actividades.php"); ?>
     </td>
 </tr>
+<?php }} ?>
     <tr>
         
         <td valign="top">
@@ -50,7 +56,9 @@ if(isset($_GET['eliminar'])){
                 <th scope="col">Acciones</th>
                 <th scope="col">Fecha</th>
                 <th scope="col">Hora</th>
+                <?php if(isset($_SESSION['tipo'])){if($_SESSION['tipo']==1){ ?>
                 <th scope="col">Herramientas</th>
+                <?php }} ?>
             </tr>
             <?php 
             $result = mysql_query ("SELECT * FROM actividad", $conexion);
@@ -62,16 +70,18 @@ if(isset($_GET['eliminar'])){
                     <td><?php echo $row['acciones']; ?></td>
                     <td><?php echo $row['fecha']; ?></td>
                     <td><?php echo $row['hora']." ".$row['turno']; ?></td>
+
+                    <?php if(isset($_SESSION['tipo'])){if($_SESSION['tipo']==1){ ?>
                     <td><a href="actividades_avanze.php?id=<?php echo $row['idActividad']; ?>"><input style="color: #FFFFFF; background-color: #1C1B1B"  TYPE="button" VALUE="Avanze"></a>
                         <a href="actividades.php?eliminar=<?php echo $row['idActividad']; ?>"><input style="color: #FFFFFF; background-color: #1C1B1B"  TYPE="button" VALUE="Eliminar"></a></td>
+                    <?php }} ?>
                     </tr>
-                    <?php
-                }
-            ?>
+                    
+                <?php } ?>
             </table>
          </td>
     </tr>
 </table>
-<?php require_once("pie.php");?>
+<?php require_once("pie.php"); ?>
 </body>
 </html>

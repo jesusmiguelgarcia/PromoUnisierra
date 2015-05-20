@@ -1,5 +1,13 @@
 <?php
 	session_start();
+	
+	if(isset($_SESSION["tipo"]))
+	{
+		if($_SESSIOM["tipo"]==1)
+		{
+			header("location:listaUsuarios.php");
+		}
+	}
 	?>
 <html>
 	<head>

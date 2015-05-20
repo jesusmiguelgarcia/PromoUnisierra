@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start(); 
+	include('SQLNoticia.php');
+
+	$c = new SQLNoticia();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,17 +22,29 @@
 								<tr>
 									<td align="right">Titulo:</td>
 									<td>
- <!--Titulo -->							<input type="text" name="titulo" size="48">
+									<?php 
+										if(isset($_POST['editar']))									
+											echo"<input type='text' name='titulo' size='48' value='".$c->Select("tituloNoticia",$_GET['id'])."' >";
+										else
+											echo"<input type='text' name='titulo' size='48'>";
+									 ?>
+ <!--Titulo -->							<!-- <input type="text" name="titulo" size="48"> -->
 									</td>
  <!--Mostar img --> 					<td rowspan="2">Mostrar imagen examinada</td>
 								</tr>
 								<tr>
 									<td valign="top">Descripcion:</td>
 									<td rowspan="2">
- <!--Descripcion -->				<textarea name="descripcion" placeholder="Cuerpo de la noticia" cols="50" 										rows="10"></textarea>
+									<?php 
+										if(isset($_POST['editar']))		
+
+										echo"<textarea name='descripcion' placeholder='Cuerpo de la noticia' cols='50' rows='10'>".$c->Select("descripcion",$_GET['id'])."</textarea>";
+										else									
+											echo"<textarea name='descripcion' placeholder='Cuerpo de la noticia' cols='50' rows='10'></textarea>";
+									?>
+ <!--Descripcion -->				<!-- <textarea name="descripcion" placeholder="Cuerpo de la noticia" cols="50" 										rows="10"></textarea> -->
 									</td>
-									<?php $fecha = date("Y"."-"."m"."-"."d"); 
-									echo $fecha; ?>
+									<?php $fecha = date("Y"."-"."m"."-"."d"); ?>
 								</tr>
 								<tr>
 									<td></td>
@@ -40,7 +56,14 @@
 									<td></td>
 									<td>
 										<center>
-	  <!-- boton agregar -->				<input type="submit" name="agregar" value="Agregar">
+										<?php if(isset($_POST['editar'])) 
+											{
+												echo "<input type='submit' name='update' value='Actualizar'>";
+											}else{
+												echo "<input type='submit' name='agregar' value='Agregar'>";
+											}
+										?>
+	  <!-- boton agregar -->				<!-- <input type="submit" name="agregar" value="Agregar"> -->
 										</center>
 									</td>
 									<td></td>
@@ -79,4 +102,20 @@
 		 $result = mysql_query($consulta);
 		 //echo $consulta;
 	}
+
+	if(isset($_POST['update']))
+	{
+		require('conexion.php');
+		$conexion = mysql_connect($servidor,$usuario,$password); 
+		mysql_select_db($bd,$conexion);
+
+		$miimagen = $_FILES['miimagen']['tmp_name']; 
+		$imagen = addslashes(fread(fopen($miimagen, "r"), filesize($miimagen)));
+		$formato = "jpg";
+
+		$update = "UPDATE noticia SET tituloNoticia ='".$_POST['titulo']."',descripcion='".$_POST['descripcion']."',imagen='".$imagen."',fecha='".$fecha."' WHERE idNoticia=".$_GET['id'];			
+		$result = mysql_query($update);
+		//echo $update;
+		header('location:index.php');
+	}	
  ?>

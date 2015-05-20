@@ -32,8 +32,14 @@
 			 					if(isset($_SESSION['Nombre'])){
 									if($_SESSION['Tipo'] == 1){
 										echo "
-											<a href = 'noticia_insertar.php?'> Nueva Noticia</a>";
+										<form action='noticia_insertar.php' method='post'>
+												<input type='submit' name='nuevaNoticia' , value='Nueva Noticia'>
+										</form> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;";
+
+										echo "Usuario: ".$_SESSION['Nombre'];									
 									}
+									else
+										echo"Usuario: ".$_SESSION['Nombre'];
 								}
 			 			 ?>
 						
@@ -58,13 +64,21 @@
 						    		</td>
 						    			<td>
 						    				<h3>". $resultado['descripcion'] ."<br> <b>Publicado el: ". $resultado['fecha']."</b></h3>
-												<a href = 'noticia_detalle.php?id=$id'> Ver mas </a>";
+						    				<form action='noticia_detalle.php?id=$id' method='post'>
+												<input type='submit' name='ver' , value='Ver'>
+											</form>";
+												
 
 												if(isset($_SESSION['Nombre'])){
 													if($_SESSION['Tipo'] == 1){
 														echo " 
-														<a href = 'noticia_eliminar.php?id=$id'> Editar </a> 
-														<a href = 'noticia_eliminar.php?id=$id'> Eliminar </a>";
+						    				<form action='noticia_insertar.php?id=$id' method='post'>
+												<input type='submit' name='editar' , value='Editar'>
+											</form>
+											<form action='noticia_eliminar.php?id=$id' method='post'>
+												<input type='submit' name='eliminar' , value='Eliminar'>
+											</form>";
+													
 													}
 												}
 

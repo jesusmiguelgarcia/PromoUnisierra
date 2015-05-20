@@ -1,12 +1,20 @@
+<?php 
+	session_start();
+	if (isset($_SEESSION['tipo']))
+	{
+		// inicio seccion 
+	}
+?>
+
 <html>
 <head>
-<title>Materias_ver</title>
+<title>Ayuda</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php 
 include("cssyjs.php");
 include("conexion.php");
-$idmateria=2;
+$idmateria=6;
  ?>
 </head>
 
@@ -18,14 +26,13 @@ $idmateria=2;
 
 <?php 
 include("cabeza.php");
-
 $conexion=mysql_connect($servidor,$usuario, $password);
 	mysql_select_db($bd);//bd
-	$sql="select nombre,descripcion,video,sitioweb from materia where idMateria=".$idmateria ;
 	mysql_query("SET NAMES 'utf8'");
+	$sql="select nombre,descripcion,video,sitioweb from materia where idMateria=".$idmateria ;
+	
 	$consulta=mysql_query($sql,$conexion);
 	 $resultado = mysql_fetch_array($consulta);
-
 	
  ?>
 
@@ -38,22 +45,15 @@ $conexion=mysql_connect($servidor,$usuario, $password);
           	
           
           	<?php
-
 		
 		 echo "id materia:".$idmateria;
 			echo "<h2>Nombre: ".$resultado['nombre']."</h2><p> Descripcion:<br>:"
 		.$resultado["descripcion"].
 		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br>".$resultado['sitioweb']."<br><br>";
 		
-
-
-
 		
 	
  ?>
-
-
-
 
 
     </div>
@@ -72,7 +72,6 @@ $conexion=mysql_connect($servidor,$usuario, $password);
 include("pie.php");
  ?>
 
- 
 
 
 

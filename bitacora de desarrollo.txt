@@ -68,4 +68,26 @@ agregar auto incremento en tablas
 ALTER TABLE `materia` CHANGE `idMateria` `idMateria` INT( 11 ) NOT NULL AUTO_INCREMENT ;
 
 
+19 de mayo
+Dos variables de sesion
+$_SESSION["nombre"]
+$_SESSION["tipo"]
+0- invitado,normal, estudiante
+1- maestro-admin
+
+$edita=0;
+if(isset($_SESSION["nombre"]))
+{
+if($_SESSION["tipo"]==1) $edita=1;
+}
+
+pagina crea var
+sesion_start();
+$_SESSION["tipo"]=1;
+$_SESSION["nombre"]="mike";
+
+ 
+
+
+
 

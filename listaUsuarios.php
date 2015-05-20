@@ -1,21 +1,20 @@
 <?php
-	function conectarse()
+	session_start();
+	if(isset($_SESSION["tipo"]))
 	{
-		if(!($link=mysql_connect("localhost","root","")))
+		if($_SESSION["tipo"]!=1)
 		{
-			echo "Error conectando con la base de datos";
-			exit();
+			header("location:index.php");
 		}
-		if(!(mysql_select_db("iscpromocion",$link)))
-		{
-			echo "Error seleccionando la base de datos";
-			exit();
-		}
-		return $link;
 	}
-	$link=conectarse();
+    print_r($_SESSION["nombre"]);
+	print_r($_SESSION["tipo"]);
+
+	require('conexion.php');
+	$conexion=mysql_connect($servidor,$usuario,$password);  //conexion bd
+	mysql_select_db($bd,$conexion);
+	$result=mysql_query("SELECT * FROM usuario", $conexion);
 	
-	$result=mysql_query("SELECT * FROM usuario",$link);
 ?>
 <html>
 	<head>
@@ -32,11 +31,13 @@
 		<center>
 			<table>
 				<tr>
-					<td><a href="formulario.php"><b><center>Nuevo Usuario</center></b></td>
+					<td><a href="formularioAgregar.php"><b><center>Nuevo Usuario</center></b></td>
 					<td><a href="buscaUsuario.php"><b><center>Buscar Usuario</center></b></td>
 					<td><a href="formularioBorrar.php"><b><center>Borrar Usuario</center></b></td>
+					<td><a href="editarUsuario.php"><b><center>Editar Usuario</center></b></td>
 					<td></td>
 					<td></td>
+
 					<td><left><a href="Login.php"><b><center>Salir</b></center></td></left>
 				</tr>
 			</table
@@ -44,23 +45,20 @@
 			<br>
 			<TABLE BORDER=1 CELLSPACING=1 CELLPADDING=1>
 					<TR><TD><b><center>id Usuario</center></b></TD><TD><b><center>Nombre</center></b></TD><TD><b><center>Apellido</center></b></TD><TD><b><center> Tipo Usuario</center></b></TD><TD><b><center> Edad</center></b></TD><TD><b><center> Sexo </center></b></TD><TD><b><center> Carrera</center></b></TD><TD><b><center> Provincia</center></b></TD><TD><b><center> Email</center></b></TD><TD><b><center> Telefono </center></b></TD><TD><b><center> Contraseña </center></b></TD></TR>
-				<?php
+			<?php
+			
 					while($row=mysql_fetch_array($result))
 					{
+						
 						printf("<tr><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>",$row['idUsuario'],$row['nombre'],$row['apellido'],$row['tipo'],$row['edad'],$row['sexo'],$row['carrera'],$row['provincia'],$row['email'],$row['telefono'],$row['password']);
 					}
 					mysql_free_result($result);
 					
-					mysql_close($link);
+					mysql_close($conexion);
 				?>
 			</table>
 		</center>
-		
+	
 		</div>
 		<?php
 				include("pie.php");
-		?>
-		</div>
-		</div>
-	</body>
-</html>

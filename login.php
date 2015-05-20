@@ -3,7 +3,7 @@
 	
 	if(isset($_SESSION["tipo"]))
 	{
-		if($_SESSIOM["tipo"]==1)
+		if($_SESSION["tipo"]==1)
 		{
 			header("location:listaUsuarios.php");
 		}

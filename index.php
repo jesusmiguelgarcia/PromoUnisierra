@@ -29,8 +29,8 @@
 
 			 			<center> <table border="0" cellspacing="10" align="">
 			 			<?php 
-			 					if(isset($_SESSION['Nombre'])){
-									if($_SESSION['Tipo'] == 1){
+			 					if(isset($_SESSION['nombre'])){
+									if($_SESSION['tipo'] == 1){
 										echo "
 										<form action='noticia_insertar.php' method='post'>
 												<input type='submit' name='nuevaNoticia' , value='Nueva Noticia'>

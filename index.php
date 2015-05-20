@@ -36,10 +36,10 @@
 												<input type='submit' name='nuevaNoticia' , value='Nueva Noticia'>
 										</form> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;";
 
-										echo "Usuario: ".$_SESSION['Nombre'];									
+										echo "Usuario: ".$_SESSION['nombre'];									
 									}
 									else
-										echo"Usuario: ".$_SESSION['Nombre'];
+										echo"Usuario: ".$_SESSION['nombre'];
 								}
 			 			 ?>
 						
@@ -69,8 +69,8 @@
 											</form>";
 												
 
-												if(isset($_SESSION['Nombre'])){
-													if($_SESSION['Tipo'] == 1){
+												if(isset($_SESSION['nombre'])){
+													if($_SESSION['tipo'] == 1){
 														echo " 
 						    				<form action='noticia_insertar.php?id=$id' method='post'>
 												<input type='submit' name='editar' , value='Editar'>

@@ -14,7 +14,7 @@
 <?php 
 include("cssyjs.php");
 include("conexion.php");
-$idMateria=1;
+$idMateria=$_GET["idMateria"];
  ?>
 </head>
 

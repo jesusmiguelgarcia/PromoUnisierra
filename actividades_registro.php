@@ -1,19 +1,16 @@
 <?php 
-require_once("conexion.php");
-
-    $conexion = mysql_connect($servidor, $usuario, $password);
-    mysql_select_db($bd, $conexion) or die("No se puede seleccionar la base de datos.");
+session_start(); 
+require_once("claseActividades.php");
 
 if(isset($_POST['registrar'])){
-
+    $acti = new actividades();
     $estado =$_POST['estado'];
     $encargado =$_POST['encargado'];
     $fecha =$_POST['fecha'];
     $hora =$_POST['hora']; $turno = $_POST['turno'];
     $acciones =$_POST['acciones'];
     $x=1;
-    mysql_query("INSERT INTO actividad (idActividad, estado, encargado, acciones, fecha, hora, turno, Usuario_idUsuario) VALUES (NULL,'".$estado."', '".$encargado."','".$acciones."','".$fecha."','".$hora."','".$turno."', '".$x."')" , $conexion);
-    header('LOCATION: actividades.php');
+    $acti->registrar($estado,$encargado,$acciones,$fecha,$hora,$turno,$x);
 }
 ?>
 <html>

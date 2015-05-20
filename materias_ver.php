@@ -14,7 +14,7 @@
 <?php 
 include("cssyjs.php");
 include("conexion.php");
-$idmateria=6;
+$idMateria=1;
  ?>
 </head>
 
@@ -29,7 +29,7 @@ include("cabeza.php");
 $conexion=mysql_connect($servidor,$usuario, $password);
 	mysql_select_db($bd);//bd
 	mysql_query("SET NAMES 'utf8'");
-	$sql="select nombre,descripcion,video,sitioweb from materia where idMateria=".$idmateria ;
+	$sql="select nombre,descripcion,video,sitioweb from materia where idMateria=".$idMateria ;
 	
 	$consulta=mysql_query($sql,$conexion);
 	 $resultado = mysql_fetch_array($consulta);
@@ -46,7 +46,7 @@ $conexion=mysql_connect($servidor,$usuario, $password);
           
           	<?php
 		
-		 echo "id materia:".$idmateria;
+		 echo "id materia:".$idMateria;
 			echo "<h2>Nombre: ".$resultado['nombre']."</h2><p> Descripcion:<br>:"
 		.$resultado["descripcion"].
 		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br>".$resultado['sitioweb']."<br><br>";

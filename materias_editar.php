@@ -4,7 +4,7 @@
  	{
  		if ($_SESSION["tipo"]==1)
  		{
- 			header("location:index.php");
+ 			header("location:materias_editar.php");
  		}
  	}else 
  	{

@@ -29,7 +29,7 @@
 		<table><left>
 		<tr>
 			<td><left><a href="listaUsuarios.php"><b>Volver</b></left></td>
-			<td><left><a href="Login.php"><b>Salir</b></left></td>
+			<td><left><a href="salir.php"><b>Salir</b></left></td>
 		</tr>
 		<form method="POST" action="registro.php"/>
 			<table>

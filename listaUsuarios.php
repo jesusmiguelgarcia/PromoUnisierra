@@ -38,7 +38,7 @@
 					<td></td>
 					<td></td>
 
-					<td><left><a href="Login.php"><b><center>Salir</b></center></td></left>
+					<td><left><a href="salir.php"><b><center>Salir</b></center></td></left>
 				</tr>
 			</table
 			<br>

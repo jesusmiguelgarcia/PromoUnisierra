@@ -2,7 +2,7 @@
  	session_start();
  	if(isset($_SESSION["tipo"]))
  	{
- 		if ($_SESSION["tipo"]==0)
+ 		if ($_SESSION["tipo"]==1)
  		{
  			header("location:index.php");
  		}

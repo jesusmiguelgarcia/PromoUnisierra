@@ -86,6 +86,18 @@ sesion_start();
 $_SESSION["tipo"]=1;
 $_SESSION["nombre"]="mike";
 
+
+--------------------
+control de sesion
+
+	if(isset($_SESSION["tipo"]))
+	{
+		if($_SESSION["tipo"]==1)
+		{
+			header("location:listaUsuarios.php");
+		}
+	}
+
  
 
 

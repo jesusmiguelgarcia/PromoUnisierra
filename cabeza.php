@@ -10,7 +10,7 @@
       <div class="menu_nav">
         <ul>
           <li class="active"><a href="index.php">Inicio</a></li>
-          <li><a href="materias_editar.php">Materias</a></li>
+          <li><a href="materias_ver.php">Materias</a></li>
           <li><a href="actividades.php">Actividades</a></li>
           <li><a href="login.php">Login</a></li>
           <li><a href="ayuda.php">Ayuda</a></li>

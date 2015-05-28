@@ -64,7 +64,7 @@ if(isset($_GET['eliminar'])){
             $result = mysql_query ("SELECT * FROM actividad", $conexion);
                 while ($row = mysql_fetch_array($result)) {
                     ?>
-                    <tr  align="center" bgcolor= "#A8ABA7">
+                    <tr  align="center" bgcolor= "">
                     <td><?php if($row['estado']== "Completo") echo "<font color='green'>$row[1]</font>"; else echo "<font color='red'>$row[1]</font>"; ?></td>
                     <td><?php echo $row['encargado']; ?></td>
                     <td><?php echo $row['acciones']; ?></td>

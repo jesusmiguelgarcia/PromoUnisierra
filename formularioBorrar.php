@@ -33,7 +33,7 @@
 			<center>
 					<h1>Borrar Usuario</h1>
 					<form action="borrarUsuario.php" method="post" name="formularioBorrar">
-						<h4>Escriba el nombre de usuario</h4>
+						<h4>Escriba el id de usuario</h4>
 						<input type="text" name="nombre"/>
 						<input type="submit" value="Borrar"/>
 					</form>

@@ -2,15 +2,16 @@
  	session_start();
  	if(isset($_SESSION["tipo"]))
  	{
- 		if ($_SESSION["tipo"]==1)
+ 		if ($_SESSION["tipo"]!=1)
  		{
- 			header("location:materias_editar.php");
+ 			header("location:index.php");
+      //header("location:materias_editar.php");
  		}
- 	}else 
+/* 	}else 
  	{
- 		header("location:index.php");
- 	}
-
+ 		
+ 	}*/
+}
 ?>
 <html>
 <head>
@@ -150,5 +151,5 @@ if(isset($_POST["enviar"]))
 
 
  <?php 
-include("pie.php");
+  include("pie.php");
  ?>

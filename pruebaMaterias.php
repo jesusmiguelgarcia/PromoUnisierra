@@ -2,8 +2,8 @@
 
 	session_start();
 
-	$_SESSION['Nombre'] = "Jacel";
-	$_SESSION['Tipo'] = 1;
+	$_SESSION['nombre'] = "Jacel";
+	$_SESSION['tipo'] = 1;
 
 	header('location:materias_editar.php');
  ?>

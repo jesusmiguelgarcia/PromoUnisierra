@@ -1,8 +1,15 @@
 <?php 
 	session_start();
-	if (isset($_SEESSION['tipo']))
+/*	if (isset($_SEESSION['tipo']))
 	{
 		// inicio seccion 
+	}*/
+?>
+<?php 
+
+	if(isset($_POST['editar']))
+	{	
+		header("location: materias_editar.php");
 	}
 ?>
 
@@ -19,6 +26,8 @@ $idMateria=$_GET["idMateria"];
 </head>
 
 <body>
+
+
   <div class="todo">
  
 
@@ -66,7 +75,10 @@ $conexion=mysql_connect($servidor,$usuario, $password);
       
  
 </div>
-
+<form method="POST" action="">
+	<input type="submit" value="Editar"name="editar"> 
+</form>
+	
   
  <?php 
 include("pie.php");

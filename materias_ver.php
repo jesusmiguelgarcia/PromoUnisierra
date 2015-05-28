@@ -8,7 +8,7 @@
 
 <html>
 <head>
-<title>Ayuda</title>
+<title>Materia_ ver</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <?php 
@@ -49,7 +49,7 @@ $conexion=mysql_connect($servidor,$usuario, $password);
 		 echo "id materia:".$idMateria;
 			echo "<h2>Nombre: ".$resultado['nombre']."</h2><p> Descripcion:<br>:"
 		.$resultado["descripcion"].
-		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br>".$resultado['sitioweb']."<br><br>";
+		":<br><br><b>Video: </b><br>".$resultado['video']. "<b><br><br>Sitio Web:</b><br>".$resultado['sitioweb']."<br><br>"
 		
 		
 	

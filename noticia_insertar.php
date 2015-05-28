@@ -101,6 +101,7 @@
 		 VALUES ('".$_POST['titulo']."','".$_POST['descripcion']."','".$imagen."','".$fecha."','1' )";
 		 $result = mysql_query($consulta);
 		 //echo $consulta;
+		 header('location:index.php');
 	}
 
 	if(isset($_POST['update']))
@@ -109,13 +110,20 @@
 		$conexion = mysql_connect($servidor,$usuario,$password); 
 		mysql_select_db($bd,$conexion);
 
-		$miimagen = $_FILES['miimagen']['tmp_name']; 
-		$imagen = addslashes(fread(fopen($miimagen, "r"), filesize($miimagen)));
-		$formato = "jpg";
 
-		$update = "UPDATE noticia SET tituloNoticia ='".$_POST['titulo']."',descripcion='".$_POST['descripcion']."',imagen='".$imagen."',fecha='".$fecha."' WHERE idNoticia=".$_GET['id'];			
-		$result = mysql_query($update);
-		//echo $update;
+		if(isset($_POST['miimagen']))
+		{
+			$miimagen = $_FILES['miimagen']['tmp_name']; 
+			$imagen = addslashes(fread(fopen($miimagen, "r"), filesize($miimagen)));
+			$formato = "jpg";
+
+			$update = "UPDATE noticia SET tituloNoticia ='".$_POST['titulo']."',descripcion='".$_POST['descripcion']."',imagen='".$imagen."',fecha='".$fecha."' WHERE idNoticia=".$_GET['id'];			
+			$result = mysql_query($update);
+			//echo $update;
+		}else{
+			$update = "UPDATE noticia SET tituloNoticia ='".$_POST['titulo']."',descripcion='".$_POST['descripcion']."',fecha='".$fecha."' WHERE idNoticia=".$_GET['id'];			
+			$result = mysql_query($update);
+		}	
 		header('location:index.php');
 	}	
  ?>
